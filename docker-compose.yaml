@@ -1,0 +1,13 @@
+services:
+
+  api:
+    image: ghcr.io/eriizu/morningstar_rt:latest
+    env_file:
+      - .env
+
+  front:
+    build: .
+    ports:
+      - 80:80
+    depends_on:
+      - api
